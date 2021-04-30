@@ -20,8 +20,7 @@ public class AccessLog {
 	public int add(String message) {
 		int id = cid.intValue();
 		log.put(id,new AccessEntry(id,message));
-		cid.set(id);
-		cid.addAndGet(1);
+		cid.getAndIncrement();
 		return id;
 	}
 		
